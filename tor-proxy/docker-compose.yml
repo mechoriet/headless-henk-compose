@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  anonwebproxy:
+    init: true
+    ports:
+     - '10700-10706:8118'
+    image: dwightgunning/anonwebproxy:latest
