@@ -1,0 +1,67 @@
+version: '3.8'
+
+x-common-variables: &common-variables
+  - HTTP_PROXY=http://[ip]:10706
+  - HTTPS_PROXY=http://[ip]:10706
+  - no_proxy=chief.placenl.nl
+services:
+  henk:
+    image: ghcr.io/tintin10q/headless-henk:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=headless-henkies"
+    environment: *common-variables
+    volumes:
+      - ./henk01.toml:/workdir/accounts.toml
+      - ./henk01:/cache
+    command: --tokens_cache=/cache/tokens_cache.toml
+    restart: always
+  henk2:
+    image: ghcr.io/tintin10q/headless-henk:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=headless-henkies"
+    environment: *common-variables
+    volumes:
+      - ./henk02.toml:/workdir/accounts.toml
+      - ./henk02:/cache
+    command: --tokens_cache=/cache/tokens_cache.toml
+    restart: always
+  henk3:
+    image: ghcr.io/tintin10q/headless-henk:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=headless-henkies"
+    environment: *common-variables
+    volumes:
+      - ./henk03.toml:/workdir/accounts.toml
+      - ./henk03:/cache
+    command: --tokens_cache=/cache/tokens_cache.toml
+    restart: always
+  henk4:
+    image: ghcr.io/tintin10q/headless-henk:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=headless-henkies"
+    environment: *common-variables
+    volumes:
+      - ./henk04.toml:/workdir/accounts.toml
+      - ./henk04:/cache
+    command: --tokens_cache=/cache/tokens_cache.toml
+    restart: always
+  henk5:
+    image: ghcr.io/tintin10q/headless-henk:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=headless-henkies"
+    environment: *common-variables
+    volumes:
+      - ./henk05.toml:/workdir/accounts.toml
+      - ./henk05:/cache
+    command: --tokens_cache=/cache/tokens_cache.toml
+    restart: always
+  henk6:
+    image: ghcr.io/tintin10q/headless-henk:latest
+    labels:
+      - "com.centurylinklabs.watchtower.scope=headless-henkies"
+    environment: *common-variables
+    volumes:
+      - ./henk06.toml:/workdir/accounts.toml
+      - ./henk06:/cache
+    command: --tokens_cache=/cache/tokens_cache.toml
+    restart: always
